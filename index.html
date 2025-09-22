@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="facebook-domain-verification" content="4v4cquqfp8hqgaf2w1gwnvlldctk6l" />
+    <title>Seeds World - Semillas y Productos Agrícolas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(45deg, #16a34a, #22c55e);
+            color: white;
+            padding: 20px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+        header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="20" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .header-content {
+            text-align: center;
+      position: relative;
+      z-index: 2;
+            padding: 80px 0;
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .logo-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(22, 163, 74, 0.95);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.1);
+            color: #86efac;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #16a34a;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 60px;
+            font-style: italic;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+            margin-top: 40px;
+        }
+
+        .about-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+
+        .experience-highlight {
+            background: linear-gradient(45deg, #22c55e, #16a34a);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .experience-highlight h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .service-card {
+            background: #f8f9fa;
+            padding: 40px 30px;
+            border-radius: 10px;
+            border-left: 5px solid #22c55e;
+            transition: all 0.3s ease;
+            height: auto;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            color: #16a34a;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            padding: 8px 0;
+            color: #555;
+            border-bottom: 1px solid #eee;
+      position: relative;
+            padding-left: 20px;
+        }
+
+        .service-list li:before {
+            content: "•";
+            color: #22c55e;
+            font-weight: bold;
+      position: absolute;
+            left: 0;
+        }
+
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Three Column Services Layout */
+        .services-overview {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .service-overview-card {
+            background: linear-gradient(45deg, #16a34a, #15803d);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .service-overview-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #86efac;
+        }
+
+        .service-overview-card ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .service-overview-card li {
+            padding: 5px 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .team-member {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid #22c55e;
+        }
+
+        .team-member h4 {
+            font-size: 1.3rem;
+            color: #16a34a;
+            margin-bottom: 5px;
+        }
+
+        .team-member .position {
+            color: #22c55e;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .team-member .quote {
+            font-style: italic;
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background: linear-gradient(45deg, #16a34a, #15803d);
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 40px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #86efac;
+        }
+
+        .contact-item {
+      display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+
+        .contact-item i {
+            color: #86efac;
+            margin-right: 15px;
+            margin-top: 3px;
+            width: 20px;
+        }
+
+        .contact-item span {
+            line-height: 1.6;
+        }
+
+        .business-hours {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .business-hours h4 {
+            color: #86efac;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .business-hours p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .business-hours strong {
+            color: #86efac;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a252f;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .services-overview {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .header-content {
+                padding: 40px 0;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Additional styling to match rooming theme */
+        .highlight-text {
+            color: #22c55e;
+            font-weight: 600;
+        }
+
+        .mission-section {
+            background: linear-gradient(45deg, #22c55e, #16a34a);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .mission-section h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+            color: white;
+            text-decoration: none;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Responsive WhatsApp button */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                font-size: 26px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+  </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="home">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">SEEDS WORLD</h1>
+                <p class="logo-subtitle">Semillas y Productos Agrícolas</p>
+                <p class="tagline">Cultivando el futuro. Ofrecemos semillas de calidad y productos agrícolas para el crecimiento de tu negocio.</p>
+      </div>
+    </div>
+  </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#team">Meet the team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">¿Por qué elegirnos?</h2>
+            <div class="about-content">
+                <div>
+                    <p class="about-text">
+                        Somos una empresa especializada en semillas y productos agrícolas de alta calidad. Ofrecemos soluciones integrales para agricultores y productores que buscan maximizar sus cosechas con semillas certificadas y productos de primera calidad. Nuestro compromiso es brindar un servicio personalizado que impulse el crecimiento de tu negocio agrícola.
+                    </p>
+                    <p class="about-text">
+                        Contamos con una amplia variedad de semillas cuidadosamente seleccionadas y certificadas. Nuestro equipo profesional se encarga de asesorar y gestionar todos los aspectos de la producción agrícola para garantizar resultados óptimos y cosechas exitosas.
+                    </p>
+                </div>
+                <div>
+                    <div class="experience-highlight">
+                        <h3>Calidad garantizada</h3>
+              </div>
+                    <p class="about-text">
+                        Ofrecemos productos integrales a través de nuestro <strong class="highlight-text">SISTEMA DE ATENCIÓN COMPLETA</strong> para todas las necesidades agrícolas. Somos referentes en semillas de calidad y productos agrícolas en la región.
+                    </p>
+                    <div class="mission-section">
+                        <h3>Nuestra Misión</h3>
+                        <p>Brindar las mejores semillas y productos agrícolas al mejor precio posible, sin comprometer la calidad, germinación y rendimiento de nuestros productos</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Productos y Servicios</h2>
+            <p class="section-subtitle">Todo lo que necesitas para tu producción agrícola exitosa</p>
+
+            <!-- Three Column Overview -->
+            <div class="services-overview">
+                <div class="service-overview-card">
+                    <h4>Semillas de Calidad</h4>
+                    <ul>
+                        <li>Semillas certificadas y tratadas</li>
+                        <li>Variedades híbridas y tradicionales</li>
+                        <li>Alta germinación garantizada</li>
+                        <li>Resistencia a plagas y enfermedades</li>
+                        <li>Precios competitivos del mercado</li>
+                    </ul>
+              </div>
+                <div class="service-overview-card">
+                    <h4>Productos Agrícolas</h4>
+                    <ul>
+                        <li>Fertilizantes orgánicos e inorgánicos</li>
+                        <li>Herbicidas y pesticidas</li>
+                        <li>Herramientas agrícolas</li>
+                        <li>Asesoramiento técnico especializado</li>
+                        <li>Servicio de entrega a campo</li>
+                    </ul>
+            </div>
+                <div class="service-overview-card">
+                    <h4>Servicios Técnicos</h4>
+                    <ul>
+                        <li>Análisis de suelo</li>
+                        <li>Planificación de cultivos</li>
+                        <li>Control de plagas</li>
+                        <li>Asesoramiento en riego</li>
+                        <li>Seguimiento de cultivos</li>
+                    </ul>
+          </div>
+      </div>
+      
+            <!-- Detailed Services -->
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Semillas Certificadas</h3>
+                    <p>Ofrecemos una amplia variedad de semillas de alta calidad para satisfacer todas las necesidades de producción agrícola:</p>
+                    <ul class="service-list">
+                        <li>Semillas de hortalizas y verduras</li>
+                        <li>Semillas de cereales y granos</li>
+                        <li>Semillas de flores ornamentales</li>
+                        <li>Semillas de pasturas y forrajes</li>
+                        <li>Variedades híbridas de alto rendimiento</li>
+                        <li>Semillas orgánicas certificadas</li>
+                        <li>Alta tasa de germinación garantizada</li>
+                        <li>Resistencia a condiciones climáticas adversas</li>
+                        <li>Calidad certificada por organismos oficiales</li>
+                        <li>Precios competitivos para productores</li>
+                        <li>Asesoramiento técnico especializado</li>
+                    </ul>
+          </div>
+          
+                <div class="service-card">
+                    <h3>Productos Agrícolas</h3>
+                    <p>Ofrecemos una gama completa de productos agrícolas para optimizar tu producción desde la siembra hasta la cosecha:</p>
+                    <ul class="service-list">
+                        <li>Fertilizantes orgánicos e inorgánicos</li>
+                        <li>Herbicidas selectivos y no selectivos</li>
+                        <li>Fungicidas y bactericidas</li>
+                        <li>Insecticidas de amplio espectro</li>
+                        <li>Productos para control de malezas</li>
+                        <li>Bioestimulantes y enraizadores</li>
+                        <li>Correctores de suelo y pH</li>
+                        <li>Productos para riego y fertirrigación</li>
+                        <li>Herramientas y equipos agrícolas</li>
+                        <li>Asesoramiento en aplicación</li>
+                    </ul>
+          </div>
+          
+                <div class="service-card">
+                    <h3>Servicios Técnicos</h3>
+                    <p>Brindamos servicios técnicos especializados para maximizar el rendimiento de tus cultivos:</p>
+                    <ul class="service-list">
+                        <li>Análisis de suelo y recomendaciones</li>
+                        <li>Planificación de rotación de cultivos</li>
+                        <li>Control integrado de plagas</li>
+                        <li>Asesoramiento en riego y drenaje</li>
+                        <li>Programas de fertilización</li>
+                        <li>Seguimiento y monitoreo de cultivos</li>
+                        <li>Capacitación en técnicas agrícolas</li>
+                        <li>Consultoría en manejo sustentable</li>
+                    </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team-section">
+        <div class="container">
+            <h2 class="section-title">Conoce nuestro equipo de expertos</h2>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=150&h=150&fit=crop&crop=face" alt="María González">
+                    <h4>María González</h4>
+                    <p class="position">Directora General</p>
+                    <p class="quote">"Nuestro compromiso es brindar semillas de la más alta calidad para que cada productor alcance el máximo rendimiento en sus cultivos"</p>
+          </div>
+
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" alt="Carlos Rodríguez">
+                    <h4>Carlos Rodríguez</h4>
+                    <p class="position">Ingeniero Agrónomo</p>
+                    <p class="quote">"La excelencia en la agricultura se logra con semillas de calidad, tecnología adecuada y conocimiento técnico especializado"</p>
+            </div>
+
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=150&h=150&fit=crop&crop=face" alt="Ana Martínez">
+                    <h4>Ana Martínez</h4>
+                    <p class="position">Especialista en Semillas</p>
+                    <p class="quote">"Cada semilla es cuidadosamente seleccionada y certificada para garantizar la mejor germinación y rendimiento"</p>
+            </div>
+
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face" alt="Diego Fernández">
+                    <h4>Diego Fernández</h4>
+                    <p class="position">Técnico Agrícola</p>
+                    <p class="quote">"Estamos disponibles para asesorarte en cada etapa de tu cultivo, desde la siembra hasta la cosecha"</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">¿Necesitas asesoramiento agrícola?</h2>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Ubicación de la Empresa</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Virrey Vertiz 6474, San Jose</span>
+        </div>
+        
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+5492235588729</span>
+            </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>seedsworld@gmail.com</span>
+          </div>
+                    <div class="contact-item">
+                        <i class="fas fa-id-card"></i>
+                        <span>CUIL: 20468160286</span>
+          </div>
+        </div>
+        
+                <div class="contact-info">
+                    <div class="business-hours">
+                        <h4>Horarios de Atención</h4>
+                        <p><strong>Días de atención:</strong></p>
+                        <p>Lunes a Viernes: 8:00 a 18:00 hs</p>
+                        <p>Sábados: 8:00 a 12:00 hs</p>
+                        <br>
+                        <p><strong>Asesoramiento técnico:</strong></p>
+                        <p>Disponible de lunes a viernes</p>
+                        <p>WhatsApp: +5492235588729</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Seeds World. Todos los derechos reservados</p>
+            <p>Semillas y productos agrícolas de calidad</p>
+    </div>
+  </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scrolling effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(22, 163, 74, 0.98)';
+            } else {
+                nav.style.background = 'rgba(22, 163, 74, 0.95)';
+            }
+        });
+    </script>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5492235588729?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20productos%20agr%C3%ADcolas" class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
